@@ -1,0 +1,34 @@
+{
+  "name": "react-redux-user-login",
+  "version": "1.0.0",
+  "description": "user login",
+  "main": "index.js",
+  "scripts": {
+    "server": "nodemon --watch server --exec babel-node -- server/index.js",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/onyebuchi702/react-user-login.git"
+  },
+  "keywords": [
+    "react",
+    "node",
+    "express",
+    "redux"
+  ],
+  "author": "marvin",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/onyebuchi702/react-redux-user/issues"
+  },
+  "homepage": "https://github.com/onyebuchi702/react-redux-user/#readme",
+  "devDependencies": {
+    "babel-cli": "^6.26.0",
+    "babel-preset-es2015": "^6.24.1",
+    "nodemon": "^1.18.5"
+  },
+  "dependencies": {
+    "express": "^4.16.4"
+  }
+}
