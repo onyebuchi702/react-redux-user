@@ -1,6 +1,6 @@
 import React from 'react';
 
-class extend WelcomePage React.Component {
+class WelcomePage extends React.Component {
   render (){
     return (
       <div className="jumbotron">
