@@ -62,14 +62,17 @@ export default {
     new webpack.optimize.OccurrenceOrderPlugin(),
     new webpack.HotModuleReplacementPlugin()
   ],
+  devServer: {
+    contentBase: './dist',
+    hot: true
+  },
   module: {
     loaders: [
       {
-        test: /\.js$/,
+        test: /\.(js|jsx)$/,
         include: path.join(__dirname, 'client'),
         exclude: /node_modules/,
         loaders: "babel-loader",
-        // loader: require.resolve('babel-loader'),
         options: {
           plugins: ['react-hot-loader/babel'],
         }
@@ -77,6 +80,6 @@ export default {
     ]
   },
   resolve: {
-    extentions: [ '', '.js' ]
+    extensions: ['*', '.js', '.jsx']
   }
 }
