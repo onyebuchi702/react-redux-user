@@ -1,7 +1,16 @@
 import express from 'express';
 import path from 'path';
+import webpack from 'webpack';
+import webpackMiddleware from 'webpack-dev-middleware';
+import webpackConfig from '../webpack.config.dev.js';
 
 let app = express();
+
+const compiler = webpack(webpackConfig);
+
+app.use(webpackMiddleware(compiler));
+
+// app.use(webpackMiddleware(webpack(webpackConfig)));
 
 app.get('/*', (req, res) => {
   // res.send('hello world');
@@ -9,3 +18,51 @@ app.get('/*', (req, res) => {
 });
 
 app.listen(3000, () => console.log('Running on localhost: 3000'));
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+// const getAccessToken = () => {
+// return new Promise(resolve => {
+//   setTimeout(() => {
+//       resolve('fake_access_token');
+//     }, 3000);
+//   })
+// }
+//
+//
+// const login = async () => {
+// const accessToken = await getAccessToken();
+//   console.log('accessToken', accessToken);
+// }
+//
+// login();
