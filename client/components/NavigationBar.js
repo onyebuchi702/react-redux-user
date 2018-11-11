@@ -1,5 +1,5 @@
 import React from 'react';
-import { Link } from 'react-router';
+import { Link } from 'react-router-dom';
 
 class NavigationBar extends React.Component {
   render (){
@@ -7,7 +7,7 @@ class NavigationBar extends React.Component {
       <nav className="navbar navbar-default">
         <div className="container-fluid">
           <div className="navbar-header">
-            <Link to="/" className="navbar-brand">Manny</Link>
+            <Link to="/" className="navbar-brand">4Sure</Link>
           </div>
           <div className="collapse navbar-collapse">
             <ul className="nav navbar-nav navbar-right">
