@@ -5,14 +5,18 @@ import Routes from './routes';
 import createBrowserHistory from 'history/createBrowserHistory';
 import { Provider } from 'react-redux';
 var thunkMiddleware = require('redux-thunk').default
-import { createStore, applyMiddleware } from 'redux';
+import { createStore, applyMiddleware, compose } from 'redux';
 import { createLogger } from "redux-logger";
+import rootReducer from './rootReducer'
 
 
 const newHistory = createBrowserHistory();
 const store = createStore(
-  (state = {}) => state,
-  applyMiddleware(thunkMiddleware, createLogger())
+  rootReducer,
+  compose(
+    applyMiddleware(thunkMiddleware, createLogger()),
+    window.devToolsExtension ? window.devToolsExtension() : f => f
+  )
 );
 
 ReactDOM.render(
