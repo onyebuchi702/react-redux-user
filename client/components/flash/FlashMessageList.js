@@ -22,7 +22,7 @@ class FlashMessageList extends React.Component {
 }
 
 FlashMessageList.propTypes = {
-  mesages: PropTypes.isArray,
+  messages: PropTypes.array.isRequired,
   deleteFlashMessage: PropTypes.func.isRequired
 }
 
