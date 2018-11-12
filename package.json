@@ -37,7 +37,10 @@
   "dependencies": {
     "@babel/preset-react": "7.0.0",
     "axios": "^0.18.0",
+    "body-parser": "^1.18.3",
+    "classnames": "^2.2.6",
     "express": "4.16.4",
+    "lodash": "^4.17.11",
     "prop-types": "^15.6.2",
     "react": "16.6.0",
     "react-dom": "16.6.0",
@@ -48,6 +51,7 @@
     "redux": "^4.0.1",
     "redux-logger": "^3.0.6",
     "redux-thunk": "^2.3.0",
+    "validator": "^10.9.0",
     "webpack-hot-middleware": "2.24.3"
   }
 }

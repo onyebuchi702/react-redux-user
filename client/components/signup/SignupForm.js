@@ -1,5 +1,6 @@
 import React from 'react';
 import PropTypes from 'prop-types';
+import classnames from 'classnames'
 
 class SignupForm extends React.Component {
   constructor(props) {
@@ -9,7 +10,8 @@ class SignupForm extends React.Component {
       username: '',
       email: '',
       password: '',
-      passwordConfirmation: ''
+      passwordConfirmation: '',
+      errors: {}
     };
 
     this.onChange = this.onChange.bind(this);
@@ -22,16 +24,20 @@ class SignupForm extends React.Component {
   }
 
   onSubmit(e) {
+    this.setState({ errors: {} });
     e.preventDefault();
-    this.props.userSignUpRequest(this.state);
+    this.props.userSignupRequest(this.state).then(
+      () => { },
+      ({ data }) => this.setstate({ errors: data })
+    );
   }
 
-
   render (){
+    const { errors } = this.state;
     return (
       <form onSubmit={this.onSubmit}>
-        <h1>Sign up here and become a member!</h1>
-        <div className="form-group">
+        <h1>Sign up here to receive news updates!</h1>
+        <div className={classnames("form-group", { 'has-error': errors.username})}>
           <label className="control-label">Username
           </label>
             <input
@@ -41,6 +47,7 @@ class SignupForm extends React.Component {
               value={this.state.username}
               onChange={this.onChange}
             />
+          {errors.username && <span className="help-block">{errors.username}</span>}
         </div>
         <div className="form-group">
           <label className="control-label">Email
@@ -87,7 +94,7 @@ class SignupForm extends React.Component {
 }
 
 SignupForm.propTypes = {
-   userSignUpRequest: PropTypes.func.isRequired
+   userSignupRequest: PropTypes.func.isRequired
 }
 
 export default SignupForm;
