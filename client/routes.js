@@ -17,18 +17,5 @@ const Routes = () => (
     </div>
   </Router>
 )
-// const routes = () => (
-//   <Route path="/">
-//     <IndexRoute component={WelcomePage}/>
-//     <Route path="signup" component={SignupPage}/>
-//   </Route>
-// )
 
 export default Routes
-
-// export default (
-//   <Route path="/" component={App}>
-//     <IndexRoute component={WelcomePage}/>
-//     <Route path="signup" component={SignupPage}/>
-//   </Route>
-// )

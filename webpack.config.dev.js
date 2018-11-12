@@ -70,7 +70,9 @@ export default {
     loaders: [
       {
         test: /\.(js|jsx)$/,
-        include: path.join(__dirname, 'client'),
+        include: [
+          path.join(__dirname, 'client'), path.join(__dirname, 'server/shared')
+        ],
         exclude: /node_modules/,
         loaders: "babel-loader",
         options: {
