@@ -38,17 +38,17 @@ class LoginForm extends React.Component {
   }
 
   onSubmit(event){
-    event.preventDefault();
-    console.log('called');
+    event.preventDefault(event);
+
     if(this.isValid()) {
       this.setState({ errors: {}, isLoading: true });
       const { username, password } = this.state;
       this.props.login(username, password)
-      // .then(
-        // (res) => this.context.router.push('/'),
-        // (res) => {},
-        // (err) => this.setState({ errors: err.data.errors, isLoading: false})
-      // )
+//       .then(
+//         (res) => this.context.router.history.push('/'),
+//         (res) => {},
+//         (err) => this.setState({ errors: err.data.errors, isLoading: false})
+//       )
     }
   }
 
@@ -59,7 +59,7 @@ class LoginForm extends React.Component {
       <form onSubmit={this.onSubmit} className='login'>
         <h1 className='loginTitle'>Login Page</h1>
 
-        {errors.form && <div className="alert alert-danger">{errors.form}</div>}
+        {errors.form && <div className="alert alert-danger" role="alert">{errors.form}</div>}
 
         <TextFieldGroup
           className='loginInput'
@@ -77,6 +77,7 @@ class LoginForm extends React.Component {
           label="Password"
           value={this.state.password}
           onChange={this.onChange}
+          type="password"
         />
 
         <button
@@ -102,7 +103,6 @@ LoginForm.contextTypes = {
 // }
 
 function mapStateToProps(state) {
-  console.log('state here', state)
   return {
     isLoading: state.auth.isLoading,
     error: state.auth.error,

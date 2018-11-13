@@ -62,7 +62,7 @@ class SignupForm extends React.Component {
 
     return (
       <form onSubmit={this.onSubmit} className="login">
-        <h1 className='loginTitle'>Sign up here to receive 4Sure news updates!</h1>
+        <h1 className='loginTitle'>Sign up here to 4sure news here!</h1>
 
         <TextFieldGroup
           error={errors.username}
