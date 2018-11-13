@@ -4,7 +4,8 @@ import { hot } from 'react-hot-loader';
 
 import App from './components/App';
 import WelcomePage from './components/WelcomePage';
-import SignupPage from './components/signup/SignupPage'
+import SignupPage from './components/signup/SignupPage';
+import LoginPage from './components/login/LoginPage';
 import NavigationBar from './components/NavigationBar';
 
 const Routes = () => (
@@ -14,6 +15,7 @@ const Routes = () => (
 
       <Route exact path="/" component={WelcomePage} />
       <Route path="/signup" component={SignupPage} />
+      <Route path="/login" component={LoginPage} />
     </div>
   </Router>
 )

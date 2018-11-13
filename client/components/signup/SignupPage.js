@@ -8,13 +8,14 @@ import { addFlashMessage} from '../../actions/flashMessages.js'
 class SignupPage extends React.Component {
   render (){
     const { userSignupRequest, addFlashMessage } = this.props;
-    console.log(addFlashMessage, '888');
+
     return (
       <div className="row">
-        <div className="col-md-4 col-md-offset-4">
+        <div className="col-md-4 offset-md-4">
           <SignupForm
             userSignupRequest={userSignupRequest}
-            addFlashMessage= {addFlashMessage}/>
+            addFlashMessage= {addFlashMessage}
+          />
         </div>
       </div>
     );

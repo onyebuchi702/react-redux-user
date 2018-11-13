@@ -5,7 +5,6 @@ import validateInput from '../../../server/shared/validations/signup';
 import TextFieldGroup from '../common/TextFieldGroup';
 import { browserHistory } from 'react-router';
 
-
 class SignupForm extends React.Component {
   constructor(props) {
     super(props);
@@ -51,7 +50,7 @@ class SignupForm extends React.Component {
             type: 'success',
             text: 'You have successfully signed up'
           })
-          browserHistory.push('/');
+          this.context.push('/')
         },
         ({ data }) => this.setstate({ errors: data, isLoading: false })
       );
@@ -62,8 +61,8 @@ class SignupForm extends React.Component {
     const { errors } = this.state;
 
     return (
-      <form onSubmit={this.onSubmit}>
-        <h1>Sign up here to receive news updates!</h1>
+      <form onSubmit={this.onSubmit} className="login">
+        <h1 className='loginTitle'>Sign up here to receive news updates!</h1>
 
         <TextFieldGroup
           error={errors.username}
@@ -97,7 +96,9 @@ class SignupForm extends React.Component {
         />
 
         <div className="form-group">
-          <button disabled={this.state.isLoading} className="btn btn-primary btn-lg">
+          <button
+            disabled={this.state.isLoading}
+            className="loginButton">
             Sign up
           </button>
         </div>
@@ -109,6 +110,10 @@ class SignupForm extends React.Component {
 SignupForm.propTypes = {
    userSignupRequest: PropTypes.func.isRequired,
    addFlashMessage: PropTypes.func.isRequired
+}
+
+SignupForm.contextTypes = {
+  router: PropTypes.object.isRequired
 }
 
 export default SignupForm;
