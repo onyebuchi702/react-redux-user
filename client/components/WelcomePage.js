@@ -6,7 +6,7 @@ class WelcomePage extends React.Component {
       <div className="container-fluid">
         <div className="row">
           <div className="jumbotron" style={divStyle}>
-            <h1>Hii Ryan !!!!!!!!!!!!!!</h1>
+            <h1>Hii Ryan !!!!!!!</h1>
           </div>
         </div>
       </div>

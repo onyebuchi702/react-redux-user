@@ -6,11 +6,11 @@ let router = express.Router();
 
 router.post('/', (req, res) => {
   const { username, password } = req.body;
-
+  console.log(username, 'here now');
   const hardusername = 'marvin@gb.com';
   const hardpassword = '123456'
 
-  if (username === hardusername && password === hardpassword){
+  if (username == hardusername && password == hardpassword){
     const token = jwt.sign({
       username: username
     }, config.jwtSecret);

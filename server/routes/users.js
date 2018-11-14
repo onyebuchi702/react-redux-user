@@ -4,6 +4,7 @@ import validateInput from '../shared/validations/signup'
 let router = express.Router();
 
 router.post('/', (req, res) => {
+  console.log(req.body, '8888');
   const { errors, isValid } = validateInput(req.body);
 
   if(isValid) {
