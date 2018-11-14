@@ -28,6 +28,7 @@ function loginFailed(error) {
   }
 }
 
+//using fetch to post will fix later
 // export function requestLogin(username, password) {
 //   return dispatch => {
 //     dispatch(login(username));
@@ -51,21 +52,18 @@ function loginFailed(error) {
 //   }
 // }
 
-
+//Using Axios to post
 export function requestLogin(username, password) {
   return dispatch => {
     dispatch(login(username));
     return axios.post('api/auth', {
       username, password
     }).then(function (response) {
-        console.log('response')
-        if (!response.ok) {
+        console.log(response.status, 'kkkk');
+        if (!response.status == 200) {
           throw Error(response.statusText);
         }
-        return response.json();
-      }).then(function (response) {
-        console.log("ok");
-        dispatch(authorized(json.token))
+        dispatch(authorized(response.data.token))
       }).catch(function (error) {
         console.log('error', error);
         dispatch(loginFailed(error))
