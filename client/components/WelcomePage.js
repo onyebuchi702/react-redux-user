@@ -16,7 +16,7 @@ class WelcomePage extends React.Component {
 
 const divStyle = {
   margin: '18px',
-  border: '5px solid pink'
+  border: '5px solid $lightTeal'
 };
 
 export default WelcomePage;
